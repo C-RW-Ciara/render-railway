@@ -582,6 +582,15 @@ def load_config():
     if len(CREDIT_NAME) == 0:   
         CREDIT_NAME = 'WeebZone'
 
+    FSMAIL = environ.get('FSMAIL', '')
+    FSPASS = environ.get('FSPASS', '')
+    if len(FSMAIL) == 0 or len(FSPASS) == 0:
+        FSMAIL = None
+        FSPASS = None 
+    FSLIMIT = environ.get('FSLIMIT', '')
+    if len(FSLIMIT) == 0:
+        FSMAIL = 20
+
     NAME_FONT = environ.get('NAME_FONT', '')
     if len(NAME_FONT) == 0: 
         NAME_FONT = 'code'
